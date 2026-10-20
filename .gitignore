@@ -1,0 +1,22 @@
+
+# React generated files
+frontend/node_modules/
+frontend/dist/
+
+# Spring Boot generated files
+backend/target/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+backend/.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

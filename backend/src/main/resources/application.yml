@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: placement-management-system
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/placement_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Devisri@32}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+app:
+  jwt:
+    secret: 9a2f8c4e7b1d3f6a8e5c2b0d9f4a7e3b1c6d8f5a2e9c4b7d0e3f6a9b2c5d8e1f
+    expiration-ms: 86400000 # 24 hours

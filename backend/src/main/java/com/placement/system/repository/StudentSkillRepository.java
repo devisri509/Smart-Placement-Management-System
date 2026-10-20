@@ -1,0 +1,18 @@
+package com.placement.system.repository;
+
+import com.placement.system.entity.Student;
+import com.placement.system.entity.StudentSkill;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface StudentSkillRepository extends JpaRepository<StudentSkill, Long> {
+    List<StudentSkill> findByStudent(Student student);
+    List<StudentSkill> findByStudentId(Long studentId);
+    Optional<StudentSkill> findByStudentIdAndSkillId(Long studentId, Long skillId);
+    boolean existsByStudentIdAndSkillId(Long studentId, Long skillId);
+    void deleteByStudentIdAndSkillId(Long studentId, Long skillId);
+}
